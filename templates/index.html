@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post" name="get_prices">
+    {{form.hidden_tag()}}
+    <p>
+        Откуда:<br>
+        {{form.start_location(size=100)}}<br>
+        {% for error in form.errors.start_location %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+        Куда:<br>
+        {{form.end_location(size=100)}}<br>
+        {% for error in form.errors.end_location %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    <p><input type="submit" value="OK"></p>
+</form>
+{% endblock %}
